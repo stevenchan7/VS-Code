@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block main %}
+
+    <!-- Register card -->
+    <div class="d-flex position-absolute top-50 start-50 translate-middle">
+        <div>
+            <h3 class="text-center">R E G I S T E R</h3>
+            <!-- Register form -->
+            <form action="/register" method="post">
+                <div class="form-outline mb-4">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" name="username" id="username" class="form-control mx-auto w-auto" placeholder="Username" autofocus autocomplete="off">
+                </div>
+                <div class="form-outline mb-4">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="text" name="password" id="password" class="form-control mx-auto w-auto" placeholder="Password" autofocus autocomplete="off">
+                </div>
+                <div class="form-outline mb-4">
+                    <label for="confirmation" class="form-label">Confirmation</label>
+                    <input type="text" name="confirmation" id="confirmation" class="form-control mx-auto w-auto" placeholder="Confirmation" autofocus autocomplete="off">
+                </div>
+                <div class="mb-3 d-grid">
+                    <button class="btn btn-primary" type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

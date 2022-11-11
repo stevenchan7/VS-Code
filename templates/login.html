@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block main %}
+
+    <!-- Login card -->
+    <div class="d-flex position-absolute top-50 start-50 translate-middle">
+        <div>
+            <h3 class="text-center">L O G  I N</h3>
+            <!-- Login form -->
+            <form action="/login" method="post">
+                <div class="form-outline mb-4">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" name="username" id="username" class="form-control mx-auto w-auto" placeholder="Username" autofocus autocomplete="off">
+                </div>
+                <div class="form-outline mb-4">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="text" name="password" id="password" class="form-control mx-auto w-auto" placeholder="Password" autofocus autocomplete="off">
+                </div>
+                <div class="mb-3 d-grid">
+                    <button class="btn btn-primary" type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}

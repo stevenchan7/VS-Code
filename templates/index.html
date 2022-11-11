@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Porto
+{% endblock %}
+
+{% block main %}
+    <nav>
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <button class="nav-link active" id="nav-income-tab" data-bs-toggle="tab" data-bs-target="#nav-income"
+                type="button" role="tab" aria-controls="nav-home" aria-selected="true">Income
+            </button>
+            <button class="nav-link" id="nav-expend-tab" data-bs-toggle="tab" data-bs-target="#nav-expend"
+                type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Expend
+            </button>
+        </div>
+    </nav>
+    <div class="tab-content" id="nav-tabContent">
+
+        <!-- Tab content panel for "Income" tab-->
+        <div class="tab-pane fade show active" id="nav-income" role="tabpanel" aria-labelledby="nav-income-tab" tabindex="0">
+
+            <!-- Income table -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Number of item</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in income %}
+                        <tr>
+                            <th scope="row">{{  item["date"]  }}</th>
+                            <td>{{  item["name"]  }}</td>
+                            <td>{{  item["price"] | rp  }}</td>
+                            <td>{{  item["count"]  }}</td>
+                            <td>{{  item["total"] | rp  }}</td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <th scope="row">{{  income_total | rp  }}</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tab-pane fade" id="nav-expend" role="tabpanel" aria-labelledby="nav-expend-tab" tabindex="0">
+
+            <!-- Expend table -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Number of item</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in expend %}
+                        <tr>
+                            <th scope="row">{{  item["date"]  }}</th>
+                            <td>{{  item["name"]  }}</td>
+                            <td>{{  item["price"] | rp  }}</td>
+                            <td>{{  item["count"]  }}</td>
+                            <td>{{  item["total"] | rp  }}</td>
+                        </tr>
+                    {% endfor %}
+                    <tr>
+                        <th scope="row">{{  expend_total | rp  }}</th>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+{% endblock %}
